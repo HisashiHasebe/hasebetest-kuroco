@@ -46,6 +46,9 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: process.env.BASE_URL,
+    // クロスオリジンでのcookieを有効化 https://kuroco.app/ja/docs/tutorials/integrate-login/
+    credentials: true,
+    withCredentials: true
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

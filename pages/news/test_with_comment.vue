@@ -2,13 +2,10 @@
   <div>
     <h1 class="title">{{ response.details.subject }}</h1>
     <div class="post" v-html="response.details.contents"></div>
-    <p v-if="resultMessage !== null">
-      {{ resultMessage }}
-    </p>
     <div>
-        please type your name: <input v-model="userName" type="text" placeholder="your name">
-    </div>
-    <div>
+        <p v-if="resultMessage !== null">
+          {{ resultMessage }}
+        </p>
         <ul v-for="comment in comments" :key="comment.comment_id">
             <li>
                 {{ comment.note }} by {{ comment.name }}
@@ -19,7 +16,7 @@
         </ul>
         <form @submit.prevent="submitComment">
             <input v-model="inputComment" type="text" placeholder="comment">
-            <button type="submit" :disabled="inputComment === '' || userName === ''">
+            <button type="submit" :disabled="inputComment === ''">
                 submit
             </button>
         </form>
@@ -41,13 +38,16 @@ async function getAllComments (topics_id) {
     return list
 }
 
+import { mapActions } from 'vuex'
 export default {
-  async asyncData({ $axios, params }) {
+  middleware: 'auth',
+  async asyncData ({ $axios, params }) {
     try {
+      const profile = await $axios.$get('/rcms-api/18/profile')
       const response = await $axios.$get(
         '/rcms-api/21/newsdetail/1047'
       )
-      return { response, comments: await getAllComments.call({ $axios }, response.details.topics_id) }
+      return { profile, response, comments: await getAllComments.call({ $axios }, response.details.topics_id) }
     } catch (e) {
       console.log(e.message)
     }
@@ -65,7 +65,8 @@ export default {
     async submitComment () {
         await this.$axios.$post('/rcms-api/21/comment', {
             module_id: this.response.details.topics_id,
-            name: this.userName,
+            name: `${this.profile.name1} ${this.profile.name2}`,
+            mail: this.profile.email,
             note: this.inputComment
             })
             this.comments = await getAllComments.call(this, this.response.details.topics_id)
