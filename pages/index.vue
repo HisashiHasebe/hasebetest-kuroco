@@ -1,4 +1,5 @@
 <template>
+  <div>プレビュープルリク確認</div>
   <Tutorial/>
 </template>
 
