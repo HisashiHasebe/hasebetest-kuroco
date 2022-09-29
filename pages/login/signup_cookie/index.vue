@@ -50,7 +50,7 @@ export default {
             try {
                 // 新規会員登録のリクエスト
                 await this.$axios.$post(
-                    '/rcms-api/10/member/regist',
+                    '/rcms-api/1/member/regist',
                     { ...this.user } // フォームの内容をリクエストボディとして適用
                 )
 
