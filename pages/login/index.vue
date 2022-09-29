@@ -12,7 +12,9 @@
       placeholder="password"
     />
     <button type="submit">ログイン</button>
-
+    <button type="button" @click="logout">
+      ログアウト
+    </button>
     <div>
       <nuxt-link to="/"> ニュース一覧ページへ </nuxt-link>
     </div>
@@ -57,6 +59,18 @@ export default {
         this.loginStatus = 'failure';
         this.resultMessage = 'ログインに失敗しました。';
       }
+    },
+    async logout({ commit }) {
+    try {
+      await this.$axios.$post('/rcms-api/18/logout')
+    } catch {
+      /** No Process */
+      /** エラーが返却されてきた場合は、結果的にログアウトできているものとみなし、これを無視します。 */
+    }
+    commit('setProfile', { profile: null })
+    commit('updateLocalStorage', { authenticated: false })
+
+    this.$router.push('/login')
     },
   },
 };
