@@ -40,7 +40,6 @@
             <p v-if="error" :style="{ color: 'red' }">
                 {{ error }}
             </p>
-            <button @click.prevent="registerUser">本登録を完了する</button>
         </div>
     </div>
 </template>
@@ -95,6 +94,11 @@ export default {
             }
         }
     },
+    mounted($route) {
+        if(this.$route.params.key != null){
+            this.registerUser();
+        }
+    }
 }
 </script>
 
