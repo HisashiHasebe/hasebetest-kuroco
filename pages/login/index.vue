@@ -16,7 +16,7 @@
       ログアウト
     </button>
     <div>
-      <nuxt-link to="/"> ニュース一覧ページへ </nuxt-link>
+      <nuxt-link to="/news/list/"> ニュース一覧ページへ </nuxt-link>
     </div>
   </form>
 </template>
