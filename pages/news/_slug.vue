@@ -18,5 +18,13 @@ export default {
       console.log(e.message)
     }
   },
+  mounted( route ) {
+    if (process.client) {
+      const id = this.$route.params.slug
+        this.$gtag('event', 'page_view', {
+          'dimension1': id
+        })
+    }
+  }
 }
 </script>

@@ -42,7 +42,13 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/google-gtag',
   ],
+  'google-gtag': {
+    id: 'UA-151755087-5',
+    send_page_view: false,
+  },
+
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
