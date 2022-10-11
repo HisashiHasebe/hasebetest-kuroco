@@ -18,7 +18,7 @@ export default {
       console.log(e.message)
     }
   },
-  mounted( route ) {
+  mounted( context, route ) {
     if (process.client) {
       const id = this.$route.params.slug
         this.$gtag('event', 'page_view', {
