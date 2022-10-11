@@ -20,9 +20,9 @@ export default {
   },
   mounted( context, route ) {
     if (process.client) {
-      const id = this.$route.params.slug
+      const slug = this.$route.params.slug
         this.$gtag('event', 'page_view', {
-          'dimension1': id
+          'dimension1': slug
         })
     }
   }
