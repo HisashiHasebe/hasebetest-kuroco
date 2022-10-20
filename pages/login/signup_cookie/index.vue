@@ -8,7 +8,8 @@
 
                 <div>
                     <label>name1</label>
-                    <input v-model="user.name1" name="name1" type="text" placeholder="name1">                </div>
+                    <input v-model="user.name1" name="name1" type="text" placeholder="name1">
+                </div>
                 <div>
                     <label>name2</label>
                     <input v-model="user.name2" name="name2" type="text" placeholder="name2">
@@ -50,7 +51,7 @@ export default {
             try {
                 // 新規会員登録のリクエスト
                 await this.$axios.$post(
-                    '/rcms-api/1/member/regist',
+                    '/rcms-api/18/member/insert',
                     { ...this.user } // フォームの内容をリクエストボディとして適用
                 )
 
