@@ -1,5 +1,5 @@
 <template>
-  <div>コミット削除の確認1</div>>
+  <div>コミット削除の確認2</div>>
 </template>
 
 <script>
