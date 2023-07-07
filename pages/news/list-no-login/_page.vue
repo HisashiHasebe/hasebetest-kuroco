@@ -21,9 +21,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 export default {
-  middleware: 'auth',
   async asyncData({ $axios, params}) {
     try {
       const response = await $axios.$get(
