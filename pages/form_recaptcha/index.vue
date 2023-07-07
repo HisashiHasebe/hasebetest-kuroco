@@ -35,6 +35,7 @@
 </template>
 
 <script>
+//Load Components
 import InquiryRecaptcha from '@/components/inquiry/inquiry-recaptcha.vue'
 
 export default {
@@ -56,7 +57,9 @@ export default {
   },
   methods: {
     async handleOnSubmit() {
+      //Authentication by reCAPTCHA
       this.submitData.recaptcha_response = await this.$refs.recaptcha.fetchResponse()
+      //Post processing to Kuroco endpoints
       try {
         await this.$axios.$post('/rcms-api/1/form?id=12',{ ...this.submitData })
         this.submitted = true
