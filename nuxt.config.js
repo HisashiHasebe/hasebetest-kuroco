@@ -51,7 +51,7 @@ export default {
 
   recaptcha: {
     hideBadge: true,
-    language: 'ja',
+    language: 'en',
     siteKey: '6Lfy6c0mAAAAAOQc6vD2PBkzAroESQeQgg_9-3DA',
     version: 2,
     size: 'normal'
