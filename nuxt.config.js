@@ -42,6 +42,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/recaptcha',
     '@nuxtjs/google-gtag',
   ],
   'google-gtag': {
@@ -49,6 +50,13 @@ export default {
     send_page_view: false,
   },
 
+  recaptcha: {
+    hideBadge: true,
+    language: 'ja',
+    siteKey: '6Lfy6c0mAAAAAOQc6vD2PBkzAroESQeQgg_9-3DA',
+    version: 2,
+    size: 'normal'
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
