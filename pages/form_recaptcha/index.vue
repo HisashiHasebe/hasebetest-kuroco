@@ -55,7 +55,8 @@
 
       <div class="row--bottom-next">
         <inquiry-recaptcha ref="recaptcha" :is-succeeded.sync="canSubmit" />
-        <button class="btn btn-primary btn-lg" @click="handleOnSubmit" disabled="!canSubmit">
+        <div>確認：{{canSubmit}}</div>
+        <button class="btn btn-primary btn-lg" @click="handleOnSubmit">
           submit
         </button>
       </div>
