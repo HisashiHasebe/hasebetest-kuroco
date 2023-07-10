@@ -23,6 +23,7 @@
       <li><nuxt-link to="/test/iframely_kakunin/">iframe自動変換の確認ページ</nuxt-link></li>
       <li><nuxt-link to="/text-to-speech/">google text to speechのお試し(base64エンコードされたmp3ファイルのデータをデコードして表示するところまで実装済み)</nuxt-link></li>
       <li><nuxt-link to="/form_recaptcha/">reCAPTCHA対応フォーム</nuxt-link></li>
+      <li><nuxt-link to="/recaptha_for_password_reminders/">reCAPTCHA対応パスワードリマインダー</nuxt-link></li>
     </ul>
   </div>
 </template>
