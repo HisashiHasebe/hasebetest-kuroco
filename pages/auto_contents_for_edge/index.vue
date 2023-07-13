@@ -37,6 +37,11 @@ export default {
       resultMessage: null,
     }
   },
+  async asyncData({ $axios }) {
+    return {
+      response: await $axios.$get('/rcms-api/1/profile'),
+    };
+  },
   methods: {
     //Login
     async login() {
