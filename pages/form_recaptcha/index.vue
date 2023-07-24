@@ -58,15 +58,14 @@ export default {
   methods: {
     async handleOnSubmit() {
       //Authentication by reCAPTCHA
-      this.submitData.recaptcha_response = await this.$refs.recaptcha.fetchResponse()
+      this.submitData.recaptcha_response = await this.$refs.recaptcha.fetchResponse();
       //Post processing to Kuroco endpoints
       try {
-        await this.$axios.$post('/rcms-api/1/form?id=12',{ ...this.submitData })
-        this.submitted = true
-        this.error = null
+        await this.$axios.$post('/rcms-api/1/form?id=12',{ ...this.submitData });
+        this.submitted = true;
+        this.error = null;
       } catch (e) {
-        console.error(e)
-        this.error = e.response.data.errors
+        this.error = e.response.data.errors;
       }
       await this.$recaptcha.reset();
     }
