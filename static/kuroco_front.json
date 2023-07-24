@@ -7,7 +7,7 @@
     ],
   "redirects": [],
   "basic":[
-    user:user
+    "user:user"
   ],
   "ip_restrictions":[]
 }
