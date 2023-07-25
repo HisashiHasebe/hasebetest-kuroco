@@ -26,6 +26,7 @@
       <li><nuxt-link to="/recaptha_for_password_reminders/">reCAPTCHA対応パスワードリマインダー</nuxt-link></li>
       <li><nuxt-link to="/auto_contents_for_edge/">OpenAIがユーザー毎に最適なコンテンツを表示する(try中)</nuxt-link></li>
       <li><nuxt-link to="/assets/">assets画像の表示</nuxt-link></li>
+      <li><nuxt-link to="/markdown_content/">markdown_content入力コンテンツの表示</nuxt-link></li>
     </ul>
   </div>
 </template>
