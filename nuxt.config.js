@@ -45,7 +45,7 @@ export default {
     '@nuxtjs/google-gtag',
   ],
   'google-gtag': {
-    id: 'UA-151755087-5',
+    id: 'G-T39XGR8R0Y',
     send_page_view: false,
   },
 
