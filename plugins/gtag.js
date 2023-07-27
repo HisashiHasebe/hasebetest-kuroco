@@ -9,5 +9,13 @@ Vue.use(VueGtag, {
             page_sysnm: 'page_sysnm',
             group_id: 'group_id',
         }
-      }
+      },
+    event:{
+        any_event_name: {
+            page_module: 'page_module',
+            main_module_id: 'main_module_id',
+            page_sysnm: 'page_sysnm',
+            group_id: 'group_id',
+        }
+    }
 });
