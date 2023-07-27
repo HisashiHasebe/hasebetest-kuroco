@@ -15,7 +15,7 @@ export default {
     return { response };
   },
   methods: {
-    async registerUser() {
+    async sendGA() {
       const slug = this.$route.params.slug
       console.log(slug)
       this.$gtag('event', 'page_view', {
@@ -24,7 +24,7 @@ export default {
     }
   },
   mounted() {
-    this.registerUser();
+    this.sendGA();
   }
 }
 </script>
