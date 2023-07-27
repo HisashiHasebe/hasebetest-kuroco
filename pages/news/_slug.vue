@@ -14,5 +14,17 @@ export default {
     }
     return { response };
   },
-};
+  methods: {
+    async registerUser() {
+      const slug = this.$route.params.slug
+      console.log(slug)
+      this.$gtag('event', 'page_view', {
+        'dimension1': slug
+      })
+    }
+  },
+  mounted() {
+    this.registerUser();
+  }
+}
 </script>
