@@ -43,12 +43,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/recaptcha',
-    '@nuxtjs/google-gtag',
   ],
-  'google-gtag': {
-    id: 'G-T39XGR8R0Y',
-    send_page_view: false,
-  },
 
   recaptcha: {
     hideBadge: true,
