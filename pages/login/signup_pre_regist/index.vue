@@ -18,10 +18,6 @@
                     <label>email</label>
                     <input v-model="email" name="email" type="email" placeholder="email">
                 </div>
-                <div>
-                    <label>login_pwd</label>
-                    <input v-model="user.login_pwd" name="login_pwd" type="password" placeholder="login_pwd">
-                </div>
 
                 <div>
                     <button type="submit">

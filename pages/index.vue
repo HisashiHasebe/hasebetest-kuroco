@@ -5,10 +5,10 @@
       <li><nuxt-link to="/easy_login/">SNSによるログイン(OAuth)</nuxt-link></li>
       <li><nuxt-link to="/form/">フォーム(ファイルアップロード込み・ドキュメント通り)</nuxt-link></li>
       <li><nuxt-link to="/login/">ログイン(Cookie)</nuxt-link></li>
-      <li><nuxt-link to="/signup_cookie/">会員登録(Cookie)</nuxt-link></li>
-      <li><nuxt-link to="/signup_token/">会員登録(動的アクセストークン)</nuxt-link></li>
-      <li><nuxt-link to="/signup_pre_regist/">仮会員登録</nuxt-link></li>
-      <li><nuxt-link to="/signup_pre_regist/done/">仮会員登録完了画面(32桁のキーがないと404)</nuxt-link></li>
+      <li><nuxt-link to="/login/signup_cookie/">会員登録(Cookie)</nuxt-link></li>
+      <li><nuxt-link to="/login/signup_token/">会員登録(動的アクセストークン)</nuxt-link></li>
+      <li><nuxt-link to="/login/signup_pre_regist/">仮会員登録</nuxt-link></li>
+      <li><nuxt-link to="/login/signup_pre_regist/done/">仮会員登録完了画面(32桁のキーがないと404)</nuxt-link></li>
       <li><nuxt-link to="/news/list/">記事一覧(要ログイン)</nuxt-link></li>
       <li><nuxt-link to="/news/list/1">記事一覧(要ログイン・ページネーション)</nuxt-link></li>
       <li><nuxt-link to="/news/list-no-login/1">記事一覧(ページネーション)</nuxt-link></li>

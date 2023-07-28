@@ -3,9 +3,34 @@
         <div v-if="signupDone">
             登録が完了しました。
         </div>
-        <p v-if="error" :style="{ color: 'red' }">
-            {{ error }}
-        </p>
+        <form @submit.prevent="registUser">
+            <div>
+                <label>name1</label>
+                <input name="name1" type="text" :value=invitationRes.data.data.ext_info.name1 disabled>
+            </div>
+            <div>
+                <label>name2</label>
+                <input name="name2" type="text" :value=invitationRes.data.data.ext_info.name2 disabled>
+            </div>
+            <div>
+                <label>email</label>
+                <input name="email" type="email" :value=invitationRes.data.data.email disabled>
+            </div>
+            <div>
+                <label>login_pwd</label>
+                <input v-model="login_pwd" name="login_pwd" type="password" placeholder="login_pwd">
+            </div>
+            <div>
+                <button type="submit">
+                    サインアップ
+                </button>
+            </div>
+        </form>
+        <div v-if="error" :style="{ color: 'red' }">
+            <p v-for="(error, idx) in error" :key="idx">
+                {{ error.message }}
+            </p>
+        </div>
     </div>
 </template>
 
@@ -17,33 +42,32 @@ export default {
     data() {
         return {
             signupDone: false,
+            login_pwd: "",
             error: null
         }
     },
+    async asyncData({ $axios, params }) {
+        const invitationRes = await $axios.post('/rcms-api/33/member_invite',
+            {
+                email_hash: params.key
+            });
+        return { invitationRes };
+    },
     methods: {
-        async registerUser() {
-            // obtain POSTed form values
-            const invitationRes = await this.$axios.post(
-                '/rcms-api/33/member_invite',
-                {
-                    email_hash: this.$route.params.key
-                }
-            );
+        async registUser() {
             try {
                 const payload = {
-                    email: invitationRes.data.data.email,
-                    ...invitationRes.data.data.ext_info
+                    login_pwd: this.login_pwd,
+                    email: this.invitationRes.data.data.email,
+                    ...this.invitationRes.data.data.ext_info
                 }
                 // request registration to an API endpoint using custom function
                 await this.$axios.post('/rcms-api/33/member_regist', payload);
-                this.signupDone = true
+                this.signupDone = true;
             } catch (error) {
-                this.error = error.response.data.errors[0].message
+                this.error = error.response.data.errors;
             }
         }
     },
-    mounted($route) {
-        this.registerUser();
-    }
 }
 </script>
