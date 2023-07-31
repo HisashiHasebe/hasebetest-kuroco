@@ -81,6 +81,23 @@ export default {
         this.search();
     },
     methods: {
+        // エンドポイントへのリクエストを行い、取得結果をsearchResultに格納
+        async search() {
+            let searchResult;
+            try {
+                // 自分の環境で設定したエンドポイントのURLに置き換えてください
+                const response = await this.$axios.get("https://sample-kuroco-document.g.kuroco.app/rcms-api/5/content", {
+                    params: {
+                        filter: this.buildFilterQuery()
+                    }
+                })
+                searchResult = response?.data || {};
+            } catch (errorResponse) {
+                searchResult = { errors: errorResponse?.data?.errors || ['Unexpected error'] };
+            }
+            this.searchResult = searchResult;
+        },
+        // filterクエリの生成
         buildFilterQuery() {
             const filterQuery = Object.entries(this.searchInput).reduce((queries, [col, value]) => {
                 switch (col) {
@@ -120,27 +137,7 @@ export default {
 
             return filterQuery;
         },
-        // エンドポイントへのリクエストを行い、取得結果をsearchResultに格納
-        async search() {
-            let searchResult;
-            try {
-                // 自分の環境で設定したエンドポイントのURLに置き換えてください
-                const response = await this.$axios.get("https://sample-kuroco-document.g.kuroco.app/rcms-api/5/content", {
-                    params: {
-                        filter: this.buildFilterQuery()
-                    }
-                })
-                searchResult = response?.data || {};
-            } catch (errorResponse) {
-                searchResult = { errors: errorResponse?.data?.errors || ['Unexpected error'] };
-            }
-            this.searchResult = searchResult;
-        },
-        // filterクエリの生成
-        buildFilterQuery() {
-            return '';
-        }
-    }
+    },
 }
 </script>
   
