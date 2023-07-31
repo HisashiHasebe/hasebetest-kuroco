@@ -2,10 +2,11 @@
     <div>
         <div v-if="!presignupDone">
             <form @submit.prevent="signup">
-                <p v-if="error" :style="{ color: 'red' }">
-                    {{ error }}
-                </p>
-
+                <div v-if="error" :style="{ color: 'red' }">
+                    <p v-for="(error, idx) in error" :key="idx">
+                        {{ error.message }}
+                    </p>
+                </div>
                 <div>
                     <label>name1</label>
                     <input v-model="user.name1" name="name1" type="text" placeholder="name1">
@@ -18,16 +19,15 @@
                     <label>email</label>
                     <input v-model="email" name="email" type="email" placeholder="email">
                 </div>
-
                 <div>
                     <button type="submit">
-                        サインアップ
+                        Sign UP
                     </button>
                 </div>
             </form>
         </div>
         <div v-else-if="presignupDone">
-            仮登録が完了しました。メールをご確認ください。
+            Your pre-registration has been completed. Please check your e-mail.
         </div>
     </div>
 </template>
@@ -52,38 +52,12 @@ export default {
                     },
                 }
                 // post data
-                // 新規会員登録のリクエスト
                 await this.$axios.$post('/rcms-api/33/member_invite', payload)
                 this.presignupDone = true
             } catch (e) {
-                console.error(e)
-                this.error = 'エラーが発生しました。'
+                this.error = e.response.data.errors
             }
         },
     },
 }
 </script>
-
-<style scoped>
-form>div {
-    margin: 8px;
-    display: flex;
-    flex-direction: row;
-}
-
-form>div>* {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100px;
-}
-
-form>div>*:nth-child(1) {
-    flex: 0 0 100px;
-    padding-right: 8px;
-}
-
-form>div>*:nth-child(2) {
-    min-width: 0;
-    flex: 1 100 auto;
-}
-</style>
