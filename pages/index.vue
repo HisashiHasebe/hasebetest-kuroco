@@ -9,10 +9,10 @@
       <li><nuxt-link to="/login/signup_token/">会員登録(動的アクセストークン)</nuxt-link></li>
       <li><nuxt-link to="/login/signup_pre_regist/">仮会員登録</nuxt-link></li>
       <li><nuxt-link to="/login/signup_pre_regist/done/">仮会員登録完了画面(32桁のキーがないと404)</nuxt-link></li>
+      <li><nuxt-link to="/news_default/">記事一覧</nuxt-link></li>
       <li><nuxt-link to="/news/list/">記事一覧(要ログイン)</nuxt-link></li>
       <li><nuxt-link to="/news/list/1">記事一覧(要ログイン・ページネーション)</nuxt-link></li>
       <li><nuxt-link to="/news/list-no-login/1">記事一覧(ページネーション)</nuxt-link></li>
-      <li><nuxt-link to="/news/">記事詳細(idでアクセスするとslugにリダイレクト)</nuxt-link></li>
       <li><nuxt-link to="/news/test_with_comment/">記事詳細(コメント機能付き)</nuxt-link></li>
       <li><nuxt-link to="/news_preview/">プレビュー用ページ</nuxt-link></li>
       <li><nuxt-link to="/search_keyword/">キーワード検索</nuxt-link></li>

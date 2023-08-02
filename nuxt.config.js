@@ -29,7 +29,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/gtag',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -43,6 +42,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/recaptcha',
+    '@nuxtjs/google-gtag'
   ],
 
   recaptcha: {
@@ -51,6 +51,11 @@ export default {
     siteKey: '6Lfy6c0mAAAAAOQc6vD2PBkzAroESQeQgg_9-3DA',
     version: 2,
     size: 'normal'
+  },
+
+  'google-gtag': {
+    id: "G-T39XGR8R0Y",
+    debug: false
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

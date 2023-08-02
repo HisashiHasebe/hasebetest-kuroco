@@ -14,17 +14,35 @@ export default {
     }
     return { response };
   },
-  methods: {
-    async sendGA() {
-      const slug = this.$route.params.slug
-      console.log(slug)
-      this.$gtag('event', 'page_view', {
-        'dimension1': slug
-      })
+  head() {
+    if (process.browser) {
+      const slug = this.$route.params.slug // ページのURLなどからslugを取得(実際の構成に合わせて変更して下さい)
+
+      // Google Analyticsのトラッキングコードを生成
+      return {
+        script: [
+          {
+            src: `https://www.googletagmanager.com/gtag/js?id=G-T39XGR8R0Y`,
+            async: true
+          },
+          {
+            innerHTML: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-T39XGR8R0Y', {
+                'page_path': window.location.pathname,
+                'slug': '${slug}'
+              });
+            `,
+            type: 'text/javascript',
+            charset: 'utf-8'
+          }
+        ]
+      };
+    } else {
+      return {}; // サーバーサイドではヘッド部に追加しないため空のオブジェクトを返す
     }
-  },
-  mounted() {
-    this.sendGA();
   }
 }
 </script>
