@@ -79,6 +79,14 @@ export default {
           inquiry_category_id: parseInt(categoryId), // Convert category ID to integer
         })),
       };
+      // Adjustment of payload when category is not selected
+      if (payload.list.length === 0) {
+        payload.list.push({
+          name: this.submitData.name,
+          email: this.submitData.from_mail,
+          body: this.submitData.body,
+        });
+      }
       //Post processing to Kuroco endpoints
       try {
         await this.$axios.$post('/rcms-api/1/message/bulk_upsert', payload);
