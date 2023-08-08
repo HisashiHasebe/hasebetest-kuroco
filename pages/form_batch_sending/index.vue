@@ -15,15 +15,15 @@
         <div>
           <dl>
             <dt>Name</dt>
-            <dd><input v-model="submitData.name" :name=name type="text"></dd>
+            <dd><input v-model="name" :name=name type="text"></dd>
           </dl>
           <dl>
             <dt>Email</dt>
-            <dd><input v-model="submitData.from_mail" :name=from_mail type="text"></dd>
+            <dd><input v-model="from_mail" :name=from_mail type="text"></dd>
           </dl>
           <dl>
             <dt>Messege</dt>
-            <dd><textarea v-model="submitData.body" :name=body></textarea></dd>
+            <dd><textarea v-model="body" :name=body></textarea></dd>
           </dl>
           <dl>
             <dt>Category</dt>
@@ -31,19 +31,19 @@
               <ul>
                 <li>
                   <label>
-                    <input type="checkbox" id="10" value="10" v-model="submitData.category" />
+                    <input type="checkbox" id="10" value="10" v-model="category" />
                     About Kuroco
                   </label>
                 </li>
                 <li>
                   <label>
-                    <input type="checkbox" id="11" value="11" v-model="submitData.category" />
+                    <input type="checkbox" id="11" value="11" v-model="category" />
                     About KurocoEdge
                   </label>
                 </li>
                 <li>
                   <label>
-                    <input type="checkbox" id="12" value="12" v-model="submitData.category" />
+                    <input type="checkbox" id="12" value="12" v-model="category" />
                     About RCMS
                   </label>
                 </li>
@@ -62,9 +62,7 @@ export default {
   data() {
     return {
       submitted: false,
-      submitData: {
-        category: [],
-      },
+      category: [],
       error: null,
     }
   },
@@ -72,19 +70,19 @@ export default {
     async handleOnSubmit() {
       // Create payload
       const payload = {
-        list: this.submitData.category.map(categoryId => ({
-          name: this.submitData.name,
-          email: this.submitData.from_mail,
-          body: this.submitData.body,
+        list: this.category.map(categoryId => ({
+          name: this.name,
+          email: this.from_mail,
+          body: this.body,
           inquiry_category_id: parseInt(categoryId), // Convert category ID to integer
         })),
       };
       // Adjustment of payload when category is not selected
       if (payload.list.length === 0) {
         payload.list.push({
-          name: this.submitData.name,
-          email: this.submitData.from_mail,
-          body: this.submitData.body,
+          name: this.name,
+          email: this.from_mail,
+          body: this.body,
         });
       }
       //Post processing to Kuroco endpoints
