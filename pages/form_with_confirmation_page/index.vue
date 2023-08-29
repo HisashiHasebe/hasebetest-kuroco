@@ -1,10 +1,8 @@
 <template>
   <div>
     <section>
-      <h1>Contact
-      </h1>
-      <div v-if="submitted">Inquiry submitted.</div>
-      <form v-else>
+      <h1>Contact</h1>
+      <form v-if="!validated" class="input">
         <div v-if="error" class="error">
           <p v-for="(err, idx) in error" :key="idx">
             {{ err }}
@@ -25,10 +23,33 @@
             <dd><textarea v-model="submitData.body" name="body" :disabled="validated"></textarea></dd>
           </dl>
         </div>
-        <button v-if="!validated" @click.prevent="handleOnValidate">Confirm your entry</button>
-        <div v-else>
+        <button @click.prevent="handleOnValidate">Confirm your entry</button>
+        <div>
           <button @click.prevent="handleOnSubmit">Submit</button>
           <button @click.prevent="validated = false">Back</button>
+        </div>
+      </form>
+      <form v-if="validated" class="confirm">
+        <div v-if="submitted">Inquiry submitted.</div>
+        <div v-else>
+          <div>
+            <dl>
+              <dt>Name</dt>
+              <dd><input v-model="submitData.name" name="name" type="text" disabled></dd>
+            </dl>
+            <dl>
+              <dt>Email</dt>
+              <dd><input v-model="submitData.email" name="email" type="text" disabled></dd>
+            </dl>
+            <dl>
+              <dt>Messege</dt>
+              <dd><textarea v-model="submitData.body" name="body" disabled></textarea></dd>
+            </dl>
+          </div>
+          <div>
+            <button @click.prevent="handleOnSubmit">Submit</button>
+            <button @click.prevent="validated = false">Back</button>
+          </div>
         </div>
       </form>
     </section>
