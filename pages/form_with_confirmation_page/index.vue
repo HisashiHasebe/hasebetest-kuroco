@@ -8,7 +8,6 @@
             {{ err }}
           </p>
         </div>
-
         <div>
           <dl>
             <dt>Name</dt>
@@ -24,10 +23,6 @@
           </dl>
         </div>
         <button @click.prevent="handleOnValidate">Confirm your entry</button>
-        <div>
-          <button @click.prevent="handleOnSubmit">Submit</button>
-          <button @click.prevent="validated = false">Back</button>
-        </div>
       </form>
       <form v-if="validated" class="confirm">
         <div v-if="submitted">Inquiry submitted.</div>
