@@ -40,9 +40,23 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/recaptcha',
+    '@nuxtjs/google-gtag'
   ],
+
+  recaptcha: {
+    hideBadge: true,
+    language: 'ja',
+    siteKey: '6Lfy6c0mAAAAAOQc6vD2PBkzAroESQeQgg_9-3DA',
+    version: 2,
+    size: 'normal'
+  },
+
+  'google-gtag': {
+    id: "G-T39XGR8R0Y",
+    debug: false
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

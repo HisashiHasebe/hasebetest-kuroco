@@ -1,10 +1,7 @@
 <template>
   <div>
-    <button type="button" @click="logout">
-      ログアウト
-    </button>
     <p>ニュース一覧ページ{{ this.$route.params.page }}</p>
-    <div v-for="n in response.list" :key="n.topics_id">
+    <div v-for="n in response.list" :key="n.topics_id" class="test">
       <nuxt-link :to="`/news/${n.topics_id}/`">{{ n.ymd }} {{ n.subject }}</nuxt-link>
     </div>
 
@@ -21,13 +18,11 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 export default {
-  middleware: 'auth',
   async asyncData({ $axios, params}) {
     try {
       const response = await $axios.$get(
-        '/rcms-api/1/news',
+        '/rcms-api/13/news',
         {
           params: {
             pageID: params.page,
@@ -39,8 +34,10 @@ export default {
       console.log(e.message)
     }
   },
-  methods: {
-    ...mapActions(['logout'])
-    }
+  mounted : function(){
+    console.log('mounted')
+    console.log(this.$el)
+    console.log(document.querySelector('.test'));
+  }
 }
 </script>

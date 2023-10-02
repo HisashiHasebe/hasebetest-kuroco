@@ -25,13 +25,13 @@
 
                 <div>
                     <button type="submit">
-                        サインアップ
+                        Signup
                     </button>
                 </div>
             </form>
         </div>
         <div v-if="signupDone">
-            新規登録が完了しました。
+            Registration completed.
         </div>
     </div>
 </template>
@@ -41,7 +41,6 @@ export default {
     data () {
         return {
             signupDone: false,
-
             user: {},
             error: null
         }
@@ -49,39 +48,19 @@ export default {
     methods: {
         async signup () {
             try {
-                // 新規会員登録のリクエスト
-                await this.$axios.$post(
-                    '/rcms-api/18/member/insert',
-                    { ...this.user } // フォームの内容をリクエストボディとして適用
-                )
-
+                // Create Payload
+                const payload = {
+                    email_send_ng_flg: false, // Set default value
+                    ...this.user
+                }
+                // New Member Registration Request
+                await this.$axios.$post('/rcms-api/18/member/insert',payload)
                 this.signupDone = true
             } catch (e) {
                 console.error(e)
-                this.error = 'エラーが発生しました。'
+                this.error = 'An error has occurred.'
             }
         }
     }
 }
 </script>
-
-<style scoped>
-form > div {
-    margin: 8px;
-    display: flex;
-    flex-direction: row;
-}
-form > div > * {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100px;
-}
-form > div > *:nth-child(1) {
-    flex: 0 0 100px;
-    padding-right: 8px;
-}
-form > div > *:nth-child(2) {
-    min-width: 0;
-    flex: 1 100 auto;
-}
-</style>
