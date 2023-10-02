@@ -19,8 +19,8 @@ jobs:
         id: get_branch
         run: |
           PR=$(curl -H "Authorization: token d981fb1acac77cf5430215377ce322ab" https://hasebetest.g.kuroco.app/direct/menu/github/?pr=${{ github.event.issue.pull_request.url }})
-          echo "::set-output name=branch::$(echo $PR | jq -r '.ref')"
-          echo "::set-output name=sha::$(echo $PR | jq -r '.sha')"
+          echo "branch=$(echo $PR | jq -r '.ref')" >> $GITHUB_OUTPUT
+          echo "sha=$(echo $PR | jq -r '.sha')" >> $GITHUB_OUTPUT
       - name: Checkout Repo
         uses: actions/checkout@v3
         with:
