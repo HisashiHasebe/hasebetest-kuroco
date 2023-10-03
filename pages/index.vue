@@ -31,6 +31,7 @@
       <li><nuxt-link to="/markdown_content/">markdown_content入力コンテンツの表示</nuxt-link></li>
       <li><nuxt-link to="/form_batch_sending/">複数回答の同時送信フォーム</nuxt-link></li>
     </ul>
+    <div>test</div>
   </div>
 </template>
 
