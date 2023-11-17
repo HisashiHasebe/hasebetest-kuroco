@@ -6,6 +6,7 @@
       <li><nuxt-link to="/form/">フォーム(ファイルアップロード込み・ドキュメント通り)</nuxt-link></li>
       <li><nuxt-link to="/form_with_confirmation_page/">フォーム(確認画面付き)</nuxt-link></li>
       <li><nuxt-link to="/login/">ログイン(Cookie)</nuxt-link></li>
+      <li><nuxt-link to="/login/2step_login/">2ステップログイン(email)</nuxt-link></li>
       <li><nuxt-link to="/login/signup_cookie/">会員登録(Cookie)</nuxt-link></li>
       <li><nuxt-link to="/login/signup_token/">会員登録(動的アクセストークン)</nuxt-link></li>
       <li><nuxt-link to="/login/signup_with_set_default/">メルマガ拒否フラグ=falseで会員登録</nuxt-link></li>
