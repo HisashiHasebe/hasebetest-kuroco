@@ -1,4 +1,7 @@
 export default {
+  env: {
+    GCP_KEY: process.env.GCP_KEY
+  },
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
   
@@ -29,6 +32,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/vue2-google-maps.client'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
