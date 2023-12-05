@@ -14,6 +14,6 @@
       "source": "/proxies/",
       "destination": "https://www.diverta.co.jp/"
     }
-  ]
+  ],
   "ip_restrictions":[]
 }
