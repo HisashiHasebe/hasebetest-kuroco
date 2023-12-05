@@ -2,7 +2,7 @@
   "rewrites": [
       {
         "source": "/test/",
-        "destination": "/news_default/"
+        "destination": "/news_default/index.html"
       }
     ],
   "redirects": [],
