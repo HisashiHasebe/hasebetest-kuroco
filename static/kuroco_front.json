@@ -1,13 +1,19 @@
 {
   "rewrites": [
       {
-        "source": "/test/",
-        "destination": "https://www.diverta.co.jp/index.html"
+        "source": ".*",
+        "destination": "/index.html"
       }
     ],
   "redirects": [],
   "basic":[
     
   ],
+  "proxies":[
+    {
+      "source": "/proxies/",
+      "destination": "https://www.diverta.co.jp/"
+    }
+  ]
   "ip_restrictions":[]
 }
