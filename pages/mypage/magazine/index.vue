@@ -43,6 +43,7 @@ export default {
     };
   },
   created() {
+    //Reflect Subscription Status Upon Access
     if (this.response && this.response.list) {
       this.response.list.forEach((magazineInfo) => {
         const matchingMagazine = this.magazines.find(magazine => magazine.id === magazineInfo.magazine_id);
