@@ -28,7 +28,7 @@ export const actions = {
     await this.$axios.$post('/rcms-api/18/login', payload)
 
     const profileRes = await this.$axios.$get('/rcms-api/18/profile')
-    commit('setProfile', { profile: profileRes.data })
+    commit('setProfile', { profile: profileRes })
     commit('updateLocalStorage', { authenticated: true })
   },
   async logout({ commit }) {
@@ -52,13 +52,14 @@ export const actions = {
     }
     try {
       const profileRes = await this.$axios.$get('/rcms-api/18/profile')
-      commit('setProfile', { profile: profileRes.data })
+      console.log('Profile data from API:', profileRes);
+      commit('setProfile', { profile: profileRes })
     } catch {
       await dispatch('logout')
       throw new Error('need to login')
     }
 
     const profileRes = await this.$axios.$get('/rcms-api/18/profile')
-    commit('setProfile', { profile: profileRes.data })
+    commit('setProfile', { profile: profileRes })
   }
 }
