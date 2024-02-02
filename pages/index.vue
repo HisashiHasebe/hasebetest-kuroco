@@ -31,6 +31,9 @@
       <li><nuxt-link to="/assets/">assets画像の表示</nuxt-link></li>
       <li><nuxt-link to="/markdown_content/">markdown_content入力コンテンツの表示</nuxt-link></li>
       <li><nuxt-link to="/form_batch_sending/">複数回答の同時送信フォーム</nuxt-link></li>
+      <li><nuxt-link to="/all_html_from_kuroco/">一覧のHTMLもKurocoで管理する表示</nuxt-link></li>
+      <li><nuxt-link to="/pdfjs-4.0.379-dist/web/compressed.tracemonkey-pldi-09.pdf">PDF.js用のサンプルPDF</nuxt-link></li>
+      <li><nuxt-link to="/pdfjs-4.0.379-dist/web/viewer.html?file=https://hasebetest.g.kuroco-front.app/pdfjs-4.0.379-dist/web/compressed.tracemonkey-pldi-09.pdf">PDF.jsのViewer</nuxt-link></li>
     </ul>
     <div>test</div>
   </div>
