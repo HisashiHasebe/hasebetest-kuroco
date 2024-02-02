@@ -2157,13 +2157,13 @@ const PDFViewerApplication = {
         viewerContainer
       } = this.appConfig,
       params = (0,_ui_utils_js__WEBPACK_IMPORTED_MODULE_0__.parseQueryString)(hash);
-    if (params.get("disableworker") === "true") {
+    
       try {
         await loadFakeWorker();
       } catch (ex) {
         console.error(`_parseHashParams: "${ex.message}".`);
       }
-    }
+    
     if (params.has("disablerange")) {
       _app_options_js__WEBPACK_IMPORTED_MODULE_2__.AppOptions.set("disableRange", params.get("disablerange") === "true");
     }
