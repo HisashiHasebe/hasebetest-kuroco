@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<pdf
-			src="https://hasebetest.g.kuroco-front.app/pdfjs-4.0.379-dist/web/compressed.tracemonkey-pldi-09.pdf"
+			:src=response.details.ext_col_20.url
 			@num-pages="pageCount = $event"
 			@page-loaded="currentPage = $event"
 		></pdf>
@@ -16,6 +16,11 @@ export default {
 	components: {
 		pdf
 	},
+    async asyncData({ $axios }) {
+    return {
+      response: await $axios.$get('/rcms-api/1/test/2797'),
+    };
+  },
 }
 
 </script>
