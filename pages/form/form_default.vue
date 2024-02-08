@@ -66,7 +66,7 @@ export default {
     async handleOnSubmit() {
       //Post processing to Kuroco endpoints
       try {
-        await this.$axios.$post('/rcms-api/8/form?_lang=en', { ...this.submitData });
+        await this.$axios.$post('/rcms-api/8/form', { ...this.submitData });
         this.submitted = true;
         this.error = null;
       } catch (e) {
