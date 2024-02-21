@@ -62,10 +62,6 @@ export default {
     debug: false
   },
 
-  generate:{
-    dir:'dist/web'
-  },
-
   router:{
     base:'/web/',
     trailingSlash:true
