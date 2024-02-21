@@ -62,6 +62,15 @@ export default {
     debug: false
   },
 
+  generate:{
+    dir:'dist/web'
+  },
+
+  router:{
+    base:'/web/',
+    trailingSlash:true
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: process.env.BASE_URL,
