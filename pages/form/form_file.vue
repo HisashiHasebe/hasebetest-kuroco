@@ -94,7 +94,7 @@ export default {
       });
       this.submitData = {
         ...this.submitData,
-        [key]: field_id
+        [key]: { "file_id": file_id }
       }
     },
     async handleOnSubmit() {
