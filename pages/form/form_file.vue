@@ -75,7 +75,7 @@ export default {
   },
   async asyncData({ $axios }) {
     return {
-      response: await $axios.$get(`/rcms-api/8/form/${FORM_ID}`),
+      response: await $axios.$get(`/rcms-api/1/form/${FORM_ID}`),
     };
   },
   methods: {
@@ -87,7 +87,7 @@ export default {
       const fm = new FormData();
       fm.append('file', e.target.files[0]);
 
-      const { file_id } = await this.$axios.$post(`/rcms-api/8/file`, fm, {
+      const { file_id } = await this.$axios.$post(`/rcms-api/1/file`, fm, {
         headers: {
           'Content-Type': 'multipart/form-data', // required to post file as a binary
         },
@@ -100,7 +100,7 @@ export default {
     async handleOnSubmit() {
       //Post processing to Kuroco endpoints
       try {
-        await this.$axios.$post('/rcms-api/8/form', { ...this.submitData });
+        await this.$axios.$post('/rcms-api/1/form', { ...this.submitData });
         this.submitted = true;
         this.error = null;
       } catch (e) {
