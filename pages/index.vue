@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>実装済み機能一覧</h1>
+    <div>プレビューデプロイ</div>
     <ul>
       <li><nuxt-link to="/easy_login/">SNSによるログイン(OAuth)</nuxt-link></li>
       <li><nuxt-link to="/form/">フォーム(ファイルアップロード込み・ドキュメント通り)</nuxt-link></li>
