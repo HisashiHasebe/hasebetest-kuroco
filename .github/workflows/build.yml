@@ -40,14 +40,12 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ github.ref_name }}-${{ hashFiles('**/package-lock.json') }}
-      - name: Install pnpm
-        run: npm install -g pnpm
       - name: Install dependencies
         if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
-        run: pnpm i
+        run: npm ci
 
       - name: Generate
-        run: pnpm run generate
+        run: npm run generate
       - name: Zip artifact for upload
         run: cd ./.output/public && zip ../../dist.zip . -r
       - name: Archive Production Artifact
@@ -85,14 +83,12 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ github.ref_name }}-${{ hashFiles('**/package-lock.json') }}
-      - name: Install pnpm
-        run: npm install -g pnpm
       - name: Install dependencies
         if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
-        run: pnpm i
+        run: npm ci
 
       - name: Generate
-        run: pnpm run generate
+        run: npm run generate
       - name: Zip artifact for upload
         run: cd ./.output/public && zip ../../dist.zip . -r
       - name: Archive Production Artifact
