@@ -55,11 +55,11 @@ export default {
         }
     },
     //Obtain pending  member information
-    async asyncData({ $axios}) {
+    async asyncData({ $axios, query}) {
         try {
             const invitationRes = await $axios.post('/rcms-api/33/member_invite',
                 {
-                    email_hash: this.$route.query.key
+                    email_hash: query.key
                 });
             return { invitationRes };
         } catch (e) {
