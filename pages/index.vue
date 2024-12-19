@@ -1,5 +1,6 @@
 <template>
   <div>
+  　<div>プレビュープルリク確認</div>
     <h1>実装済み機能一覧</h1>
     <ul>
       <li><nuxt-link to="/easy_login/">SNSによるログイン(OAuth)</nuxt-link></li>
