@@ -10,8 +10,8 @@
     "destination": "/new_path/"
   },
   {
-    "source": "^/?old_path/",
-    "destination": "/?new_path/"
+    "source": "^/?old_path",
+    "destination": "/?new_path"
   }
 ],
   "basic":[
