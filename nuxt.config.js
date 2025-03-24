@@ -52,7 +52,7 @@ export default {
   recaptcha: {
     hideBadge: true,
     language: 'ja',
-    siteKey: '6Lfy6c0mAAAAAOQc6vD2PBkzAroESQeQgg_9-3DA',
+    siteKey: '6LfGCP4qAAAAAKBgsVRB5XqCxH05rk6kHWJRSD6u',
     version: 2,
     size: 'normal'
   },
