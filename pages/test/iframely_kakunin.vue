@@ -11,7 +11,7 @@ export default {
   async asyncData({ $axios, params }) {
     return {
       response: await $axios.$get(
-        `https://sample-support-kuroco.a.kuroco.app/rcms-api/26/test/253`
+        `https://sample-support-kuroco.a.kuroco.app/rcms-api/35/iframely/973`
       ),
     }
   },
