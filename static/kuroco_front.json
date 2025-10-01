@@ -1,27 +1,26 @@
 {
   "rewrites": [
-      {
-        "source": ".*",
-        "destination": "/index.html"
-      }
-    ],
-  "redirects": [      {
-    "source": "^/old_path/",
-    "destination": "/new_path/"
-  },
-  {
-    "source": "^/?old_path",
-    "destination": "/?new_path"
-  }
-],
-  "basic":[
-    
+    {
+      "source": "^/$",
+      "destination": "/index.html"
+    },
+    {
+      "source": "^/news_default/?$",
+      "destination": "/index.html"
+    }
   ],
-  "proxies":[
+  "redirects": [
+    {
+      "source": "^/.*",
+      "destination": "status:404"
+    }
+  ],
+  "basic": [],
+  "proxies": [
     {
       "source": "/proxies/",
       "destination": "https://www.diverta.co.jp/"
     }
   ],
-  "ip_restrictions":[]
+  "ip_restrictions": []
 }
