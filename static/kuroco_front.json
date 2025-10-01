@@ -10,10 +10,6 @@
     }
   ],
   "redirects": [
-    {
-      "source": "^/.*",
-      "destination": "status:404"
-    }
   ],
   "basic": [],
   "proxies": [
