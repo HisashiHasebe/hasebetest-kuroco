@@ -1,1 +1,29 @@
-<div>404です。</div>
+<!doctype html>
+<meta charset="utf-8">
+<title>404 Not Found</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  /* 最小構成：余白ゼロ + 中央寄せ + 読みやすいデフォルトフォント */
+  html,body{height:100%}
+  body{margin:0;display:grid;place-items:center;min-height:100vh;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans JP",sans-serif;color:#0f172a;background:#f8fafc}
+  main{padding:24px;text-align:center}
+  h1{margin:0 0 8px;font-size:clamp(20px,4vw,28px)}
+  p{margin:0 0 12px;color:#334155}
+  .links{margin-top:12px}
+  a{color:#2563eb;text-decoration:none}
+  a:hover{text-decoration:underline}
+  @media (prefers-color-scheme: dark){
+    body{color:#e5e7eb;background:#0b1020}
+    p{color:#94a3b8}
+  }
+</style>
+<main role="main" aria-labelledby="title">
+  <h1 id="title">ページが見つかりません（404）</h1>
+  <p>URLが間違っているか、ページが移動・削除された可能性があります。</p>
+  <p class="links">
+    <a href="/">トップへ戻る</a>
+    &nbsp;·&nbsp;
+    <a href="javascript:history.back()" aria-label="前のページに戻る">戻る</a>
+  </p>
+</main>
