@@ -9,7 +9,9 @@
       "destination": "/index.html"
     }
   ],
-  "redirects": [],
+  "redirects": [
+    { "source": ".*", "destination": "status:404" }
+  ],
   "error_page": {
     "status404": "/404.html"
   },
