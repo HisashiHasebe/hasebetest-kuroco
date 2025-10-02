@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "^/404\\.html$", "destination": "/404.html" },
     {"source": "^/$", "destination": "/index.html"},
     {"source": "^/news_default$", "destination": "/index.html"},
     {"source": "^/news_default/.*", "destination": "/index.html"}
