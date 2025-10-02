@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {"source": "^/$", "destination": "/index.html"},
-    {"source": "^/news_default$", "destination": "/index.html"}
+    {"source": "^/news_default$", "destination": "/index.html"},
     {"source": "^/news_default/.*", "destination": "/index.html"}
   ],
   "redirects": [],
