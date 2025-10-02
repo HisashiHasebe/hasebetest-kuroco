@@ -1,12 +1,12 @@
-{
-  "rewrites": [
-    {"source": "^/$", "destination": "/index.html"},
-    {"source": "^/news_default$", "destination": "/index.html"},
-    {"source": "^/news_default/.*", "destination": "/index.html"}
-  ],
-  "redirects": [],
-  "error_page": {
-    "status404": "/404.html"
+{ 
+  "rewrites": [ 
+    {"source": "^/$", "destination": "/index.html"}, 
+    {"source": "^/news$", "destination": "/index.html"}, 
+    {"source": "^/news/.*", "destination": "/index.html"} 
+  ], 
+  "redirects": [], 
+  "error_page": { 
+    "status404": "/404.html" 
   },
   "basic": [],
   "proxies": [
