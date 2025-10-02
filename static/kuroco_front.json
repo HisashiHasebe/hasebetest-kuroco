@@ -5,9 +5,7 @@
     {"source": "^/news_default$", "destination": "/index.html"},
     {"source": "^/news_default/.*", "destination": "/index.html"}
   ],
-  "redirects": [
-    { "source": ".*", "destination": "status:404" }
-  ],
+  "redirects": [],
   "error_page": {
     "status404": "/404.html"
   },
